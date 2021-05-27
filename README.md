@@ -49,7 +49,7 @@ pip install numpy
 pip install matplotlib
 ```
 
-After installing the libraries you can run the script by executing main.py, make sure you have all 3 project files (analyze.py, plot.py, main.py) in the same directory before executing.
+After installing the libraries you can run the script by executing main.py, make sure you have the pcap file (you can change the filename in main.py) and all 3 project files (analyze.py, plot.py, main.py) in the same directory before executing.
 
 You can change which graphs/plots are shown by commenting out the corresponding lines in the main file.
 
