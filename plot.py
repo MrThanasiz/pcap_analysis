@@ -22,7 +22,7 @@ def plotPacketSizeDistribution(packets):
     #print(len(packetSizes))
     x = np.array(packetSizes)
     plt.hist(x, bins=20)
-    plt.gca().set(title='Packet Frequency Histogram', ylabel='Frequency', xlabel='Packet Size')
+    plt.gca().set(title='Packet Size Frequency Histogram', ylabel='Frequency', xlabel='Packet Size')
     #axs[1].hist(y, bins=n_bins)
     plt.show()
 
@@ -44,6 +44,7 @@ def plotArrayCdf(array,scale,label):
 
     plt.step(data, dataCdf)
     plt.xscale(scale)
+    plt.title(label)
     plt.xlabel(label)
     plt.ylabel("CDF")
     plt.show()
