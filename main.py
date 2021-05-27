@@ -5,6 +5,7 @@ from os import path
 inputFilename = 'univ1_pt1'
 if not path.exists(inputFilename):
     print(inputFilename, " Not found, make sure you have the corrent file")
+    return
 
 flows = analyze.getFlows(inputFilename)
 packetDistribution = analyze.getPacketDistribution(inputFilename)
