@@ -9,11 +9,16 @@ def plotPacketCategoryPie(packetDistribution):
     sizes = packetDistribution #tcp,udp,icmp,arp,ipother, nonipother
     explode = (0, 0, 0, 0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
+    
+    legendArr = []
+    for i in range(len(sizes)):
+        legendArr.append(labels[i] + " - " + str(sizes[i]))
+
     fig1, ax1 = plt.subplots()
     ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
             shadow=True, startangle=90)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
+    ax1.legend(legendArr, loc="lower left", title="Packet Counts - Total: " + str(sum(sizes)))
     plt.show()
 
 def plotPacketSizeDistribution(packets):
@@ -22,7 +27,7 @@ def plotPacketSizeDistribution(packets):
     #print(len(packetSizes))
     x = np.array(packetSizes)
     plt.hist(x, bins=20)
-    plt.gca().set(title='Packet Size Frequency Histogram', ylabel='Frequency', xlabel='Packet Size')
+    plt.gca().set(title='Packet Size (Bytes) Frequency Histogram - Total Packets ' + str(len(packetSizes)), ylabel='Frequency', xlabel='Packet Size (Bytes)')
     #axs[1].hist(y, bins=n_bins)
     plt.show()
 
